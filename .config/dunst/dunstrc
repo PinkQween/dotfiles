@@ -1,0 +1,27 @@
+[global]
+	follow=mouse
+	enable_posix_regex=true
+	notification_limit=6
+
+	#
+	#  Configure the width and height of the notification.
+	#
+	width=(0,300)
+	height=(0,300)
+	
+	origin=top-right
+	offset=(20,10)
+
+	stack_duplicates=true
+	hide_duplicate_count=true
+
+	frame_width=2
+
+	#
+	#  Rounding and making the display nicer.
+	#
+	corner_radius=12
+
+	background="#00000050"
+	foreground="#FFFFFF"
+	frame_color="#422635"

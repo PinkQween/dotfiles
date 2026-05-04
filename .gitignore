@@ -6,6 +6,16 @@
 !.config/hypr/**
 !.config/rofi/
 !.config/rofi/**
+!.config/waybar/
+!.config/waybar/**
+!.config/nvim/
+!.config/nvim/**
+!.config/kitty/
+!.config/kitty/**
+!.config/dunst/
+!.config/dunst/**
+!.config/btop/
+!.config/btop/**
 
 # Common local noise
 *.log

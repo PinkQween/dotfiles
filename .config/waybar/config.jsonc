@@ -1,0 +1,111 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 50,
+  "spacing": 0,
+  "margin-top": 6,
+  "margin-left": 6,
+  "margin-right": 6,
+  "modules-left": [
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "custom/network",
+    "battery",
+    "backlight",
+    "pulseaudio",
+    "custom/temperature",
+    "memory",
+    "cpu"
+  ],
+  "hyprland/workspaces": {
+    "disable-scroll": false,
+    "all-outputs": true,
+    "format": "{icon}",
+    "on-click": "activate",
+    "persistent-workspaces": {},
+    "format-icons": {
+      "active": "●"
+    }
+  },
+  "pulseaudio": {
+    "format": "{icon}  {volume}%",
+    "format-muted": "󰖁  0%",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "󰖁",
+        "󰕿",
+        "󰖀",
+        "󰕾"
+      ]
+    },
+    "on-click": "pavucontrol",
+    "tooltip": false
+  },
+  "memory": {
+    "format": "󰍛  {percentage}%",
+    "tooltip": false
+  },
+  "cpu": {
+    "format": "󰔏 {usage}%",
+    "tooltip": false
+  },
+  "clock": {
+    "interval": 1,
+    "timezone": "Arizona/Phoenix",
+    "format": "  {:%H:%M}",
+    "tooltip": false
+  },
+  "custom/network": {
+    "format": "{}",
+    "exec": "~/.config/waybar/scripts/network.sh",
+    "interval": 1,
+    "on-click": "iwctl",
+    "tooltip": false
+  },
+  "battery": {
+    "states": {
+      "good": 80,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon}  {capacity}%",
+    "format-charging": "󰂄  {capacity}%",
+    "format-plugged": "󰂅  {capacity}%",
+    "format-alt": "{icon}  {time}",
+    "format-icons": [
+      "󰂎",
+      "󰁺",
+      "󰁻",
+      "󰁼",
+      "󰁽",
+      "󰁾",
+      "󰁿",
+      "󰂀",
+      "󰂁",
+      "󰂂",
+      "󰗖"
+    ],
+    "tooltip": false
+  },
+  "backlight": {
+    "format": "{icon}  {percent}%",
+    "format-icons": [
+      "󰃞",
+      "󰃟",
+      "󰃠"
+    ],
+    "on-scroll-up": "bash -c 'VAL=$(cat /sys/class/backlight/amdgpu_bl1/brightness); NEW=$((VAL + 3276)); MAX=$(cat /sys/class/backlight/amdgpu_bl1/max_brightness); [ $NEW -gt $MAX ] && NEW=$MAX; echo $NEW > /sys/class/backlight/amdgpu_bl1/brightness'",
+    "on-scroll-down": "bash -c 'VAL=$(cat /sys/class/backlight/amdgpu_bl1/brightness); NEW=$((VAL - 3276)); [ $NEW -lt 0 ] && NEW=0; echo $NEW > /sys/class/backlight/amdgpu_bl1/brightness'",
+    "tooltip": false
+  }
+}
