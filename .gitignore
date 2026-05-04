@@ -1,0 +1,14 @@
+# Ignore everything by default; allow tracked dotfiles below.
+*
+!.gitignore
+!.config/
+!.config/hypr/
+!.config/hypr/**
+!.config/rofi/
+!.config/rofi/**
+
+# Common local noise
+*.log
+*.tmp
+*.swp
+*.swo
