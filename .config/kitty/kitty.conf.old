@@ -1,0 +1,9 @@
+include ./themes/pastel.conf
+
+window_padding_width 15
+
+
+# BEGIN_KITTY_THEME
+# Sakura Night
+include current-theme.conf
+# END_KITTY_THEME
